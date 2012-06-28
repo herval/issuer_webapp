@@ -16,7 +16,7 @@ get "/" do
 end
 
 get '/auth/github' do
-  url = client.auth_code.authorize_url(:redirect_uri => redirect_uri, :scope => 'user')
+  url = client.auth_code.authorize_url(:redirect_uri => redirect_uri, :scope => 'user,repo')
   puts "Redirecting to URL: #{url.inspect}"
   redirect url
 end
